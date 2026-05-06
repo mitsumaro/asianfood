@@ -1,0 +1,894 @@
+/* CSS Reset & Variables */
+:root {
+  --color-primary: #D32F2F;
+  /* 赤系 */
+  --color-primary-dark: #b71c1c;
+  --color-secondary: #1976D2;
+  /* 青系（フッター用） */
+  --color-nav-bg: #c62828;
+  --color-text-main: #333333;
+  --color-text-light: #666666;
+  --color-white: #ffffff;
+  --color-bg-light: #f9f9f9;
+
+  --font-heading: 'Noto Sans JP', sans-serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+
+  --container-width: 1200px;
+  --header-height: 80px;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  background-color: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.header__logo-link:hover {
+  opacity: 1;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+ul {
+  list-style: none;
+  /* リストマーカーを削除 */
+  padding-left: 0;
+}
+
+/* Utility Classes */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  color: var(--color-text-main);
+  /* デフォルト色 */
+}
+
+/* AboutやValuesではデフォルト色を使用する場合が多いが、背景色によっては白にする */
+.section-title--center {
+  text-align: center;
+}
+
+.section-title--white {
+  color: var(--color-white);
+}
+
+.ja-title {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background-color: #003366;
+  /* Menuボタンの濃い青 */
+  color: var(--color-white);
+}
+
+/* Header */
+.header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Two-tone background: Dark Blue | Red */
+  background: linear-gradient(115deg, #001f3f 0%, #001f3f 20%, var(--color-nav-bg) 20%, var(--color-nav-bg) 100%);
+  color: var(--color-white);
+  padding: 0;
+  /* Remove padding to fill height */
+}
+
+.header__inner {
+  width: 100%;
+  /* Ensure full width */
+  max-width: 100%;
+  /* Remove container width constraint */
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  /* Adjust height */
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo img {
+  vertical-align: middle;
+  /* Ensure logo is easily visible */
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+}
+
+.header__list {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.header__item a {
+  font-family: var(--font-body);
+  /* Use Noto Sans JP */
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: none;
+  /* Can be uppercase or none based on pref, image shows Mixed/Japanese */
+}
+
+/* Language Toggle Switch Style */
+.header__lang {
+  margin-left: 0;
+  background: var(--color-white);
+  border: 2px solid var(--color-white);
+  color: #001f3f;
+  padding: 2px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  position: relative;
+  box-sizing: border-box;
+  font-size: 0;
+  /* Hide text node */
+}
+
+/* Verify visually: The image shows a toggle.
+   If currently JP (link to EN), show knob on LEFT or RIGHT?
+   Usually "Active" is displayed. But this is a link to the OTHER language.
+   Let's make it look like a switch.
+   For simplicity and clarity:
+   White Pill background.
+   Dark Circle with Text inside?
+   Or distinct "EN" and "JP" text?
+   Image has "EN" inside a dark circle.
+*/
+
+.header__lang::before {
+  content: "EN";
+  /* Default text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #001f3f;
+  color: var(--color-white);
+  border-radius: 50%;
+  position: absolute;
+  right: 2px;
+  /* Position for "Link to EN" */
+  font-size: 0.7rem;
+}
+
+/* When on EN page (link is to JP), maybe change style? 
+   We will handle this with a specific class or leave as "Switch to Other"
+   If the link text is "JP", we change content.
+*/
+.header__lang[href="../"]::before {
+  content: "JP";
+  left: 2px;
+  right: auto;
+  background-color: var(--color-primary);
+  /* Maybe red for JP? or keep Blue */
+}
+
+/* Hide the text content of the link itself to rely on pseudo-element for the visual "knob" 
+   OR style the text inside.
+   Let's try to just style the link as the container.
+*/
+
+
+.header__toggle {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* About Section */
+.section-title--about {
+  color: #001f3f;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.about__container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+  /* 左側はコンテナのグリッドに合わせる計算 (画面幅が広い場合) */
+  /* padding-left = (100% - 1200px) / 2 + 2rem(container padding) */
+  padding-left: max(var(--spacing-md), calc((100% - var(--container-width)) / 2 + var(--spacing-md)));
+  padding-right: 0;
+  /* 右側は画面端まで画像を表示 */
+}
+
+.about__content {
+  flex: 0 0 auto;
+  /* コンテナ幅の半分くらいを目安に調整、ただしgapを考慮 */
+  width: 100%;
+  max-width: 500px;
+  /* テキスト部分の幅調整 */
+}
+
+.about__image {
+  flex: 1 1 auto;
+  min-width: 0;
+  /* 画像が縮小できるようにする */
+  position: relative;
+}
+
+.about__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about__text {
+  line-height: 2;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Values Section */
+.values {
+  background-color: #f9f9f9;
+  /* 背景色微調整 */
+}
+
+/* Values Header Styling Adjustment for "OUR こだわり VALUES" */
+.values .section-title {
+  color: #e6e6e6;
+  /* 薄いグレーで "OUR VALUES" */
+  position: relative;
+  font-size: 4rem;
+  /* 大きく背景のように */
+  margin-bottom: var(--spacing-xl);
+  line-height: 1;
+}
+
+.values .section-title .ja-title {
+  color: #003366;
+  /* 濃い青 */
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* Values Section Title */
+.section-title--values {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  /* Adjust based on background text size */
+  margin-bottom: var(--spacing-xl);
+  overflow: hidden;
+}
+
+.section-title__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 8rem;
+  /* Large background text */
+  font-weight: 700;
+  color: #e0e0e0;
+  /* Light grey */
+  z-index: 1;
+  white-space: nowrap;
+  opacity: 0.5;
+  width: 100%;
+  text-align: center;
+}
+
+.section-title__main {
+  position: relative;
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #001f3f;
+  /* Dark blue */
+}
+
+.values__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xl);
+}
+
+.value-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.value-item--reverse {
+  flex-direction: row-reverse;
+}
+
+.value-item__image {
+  flex: 1;
+}
+
+.value-item__content {
+  flex: 1;
+  max-width: 670px;
+}
+
+.value-item__title {
+  font-family: var(--font-body);
+  /* 日本語フォント優先 */
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #003366;
+  /* 青色タイトル */
+  margin-bottom: var(--spacing-sm);
+}
+
+.value-item__text {
+  line-height: 2;
+}
+
+/* Menu Section */
+.menu {
+  background-color: var(--color-primary);
+  /* 背景赤 */
+  color: var(--color-white);
+  padding-bottom: var(--spacing-xl);
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.menu-item {
+  text-align: center;
+}
+
+.menu-item__img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  margin-bottom: var(--spacing-sm);
+}
+
+.menu-item__img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  /* Slight rounding for the square image */
+}
+
+.menu-item__img-wrapper .badge-img {
+  position: absolute;
+  top: -50px;
+  right: -30px;
+  width: 150px;
+  /* Adjusted size */
+  height: auto;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.menu-item__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.menu__footer {
+  text-align: center;
+}
+
+/* Hatbazaar Section */
+.hatbazaar__container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  max-width: none;
+  padding: 0;
+  padding-left: max(var(--spacing-md), calc((100% - var(--container-width)) / 2 + var(--spacing-md)));
+  gap: 0;
+}
+
+.hatbazaar__content {
+  flex: 1;
+  padding-right: var(--spacing-md);
+}
+
+.hatbazaar__text {
+  line-height: 2;
+  margin-bottom: var(--spacing-md);
+}
+
+.hatbazaar__image-slider {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  /* Optional rounded corners */
+}
+
+/* Slider Wrapper (Ul) */
+.slider-wrapper {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slider-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: 500px;
+  /* Fixed height as requested (approx 950x500 aspect) */
+  object-fit: cover;
+  display: block;
+}
+
+/* Slider Navigation Container */
+.slider-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px 5px; /* 下部にアウトライン用の余白を追加 */
+}
+
+/* Controls */
+.slider-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.slider-prev,
+.slider-next {
+  background-color: #001f3f;
+  /* Dark Blue */
+  color: #fff;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+  opacity: 1;
+}
+
+/* マウスクリック時は枠を出さず、キーボード操作時のみ枠を出す */
+.slider-prev:focus,
+.slider-next:focus {
+  outline: none;
+}
+
+.slider-prev:focus-visible,
+.slider-next:focus-visible {
+  outline: 2px solid #001f3f;
+  outline-offset: 2px;
+}
+
+/* Dots */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.slider-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.slider-dot[aria-selected="true"] {
+  background-color: #001f3f;
+  /* Active dot color */
+}
+
+/* Access / Footer Area */
+.access {
+  background-color: #2c6ca8;
+  /* 青色背景 */
+  color: var(--color-white);
+  padding: var(--spacing-xl) 0;
+}
+
+.access__container {
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.access__info {
+  flex: 1;
+  padding-right: var(--spacing-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.access__title {
+  text-align: left;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-lg);
+}
+
+.access__address {
+  font-style: normal;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.access__hours-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.access__hours-row {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.access__label {
+  display: inline-block;
+  min-width: 100px;
+}
+
+.access__map {
+  flex: 1;
+  height: 450px;
+  width: 100%;
+}
+
+.access__map iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  background-color: #b71c1c;
+  /* フッター赤 */
+  color: var(--color-white);
+  padding: var(--spacing-lg) 0 var(--spacing-sm);
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.footer__heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+}
+
+.footer__copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: var(--spacing-sm);
+  font-size: 0.8rem;
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 768px) {
+  :root {
+    --spacing-xl: 4rem;
+    --spacing-lg: 2rem;
+    --header-height: 60px;
+  }
+
+  .header__inner {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .header__toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2000;
+    width: 70px;
+    height: 70px;
+    margin-right: calc(var(--spacing-sm) * -1); /* 右端にぴったり合わせる */
+    background: #001f3f; /* 常時濃紺の四角い背景 */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .header__toggle-line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-white);
+    position: absolute;
+    top: 34px; /* 70pxの中央 */
+    left: 20px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .header__toggle-line:nth-child(1) {
+    transform: translateY(-9px);
+  }
+
+  .header__toggle-line:nth-child(2) {
+    transform: translateY(0);
+  }
+
+  .header__toggle-line:nth-child(3) {
+    transform: translateY(9px);
+  }
+
+  /* Active state for hamburger */
+  .header__toggle.is-active .header__toggle-line:nth-child(1) {
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .header__toggle.is-active .header__toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__toggle.is-active .header__toggle-line:nth-child(3) {
+    transform: translateY(0) rotate(-45deg);
+  }
+
+  /* --- Mobile Navigation Menu --- */
+  .header__nav {
+    display: block;
+    position: fixed;
+    top: 70px; /* ヘッダーの下から開始 */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: linear-gradient(160deg, rgba(198, 40, 40, 1) 48%, #001f3f 48%); /* 斜め分割 */
+    padding-top: 40px;
+    text-align: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999; /* ヘッダーの下に潜る */
+    visibility: hidden;
+    overflow-y: auto;
+  }
+
+  .header__nav.is-active {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .header__list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* 間隔を広げる */
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+  }
+
+  .header__item a {
+    font-size: 1.5rem;
+    display: block;
+    padding: 0.5rem;
+    text-align: center;
+  }
+
+  /* --- Language Switch --- */
+  .header__lang {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    margin: 0;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background: #fff;
+    color: #001f3f;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 12px;
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  .header__lang::before {
+    content: ""; /* デスクトップの文字を上書き */
+    width: 32px;
+    height: 32px;
+    background-color: #001f3f;
+    border-radius: 50%;
+    position: absolute;
+    left: 4px;
+    right: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header__lang[href=\"../\"]::before {
+    content: ""; /* デスクトップの文字を上書き */
+  }
+
+  /* --- Hatbazaar / Slider / Other Mobile Adjustments --- */
+  .hatbazaar__container {
+    flex-direction: column-reverse;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  .hatbazaar__content {
+    padding-right: 0;
+  }
+
+  .slider-slide img {
+    height: 300px;
+    /* Adjust height for mobile */
+  }
+
+  .section-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .about__container,
+  .value-item,
+  .value-item--reverse,
+  .hatbazaar__container,
+  .access__container {
+    flex-direction: column;
+  }
+
+  .about__container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+
+  .value-item--reverse {
+    flex-direction: column;
+    /* モバイルでは順序統一または維持 */
+  }
+
+  .menu__grid,
+  .footer__links {
+    grid-template-columns: 1fr;
+  }
+
+  .values .section-title {
+    font-size: 3rem;
+  }
+
+  .values .section-title .ja-title {
+    font-size: 1.2rem;
+  }
+
+  .section-title--values {
+    height: 6rem;
+  }
+
+  .section-title__bg {
+    font-size: 4rem;
+  }
+
+  .menu__grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

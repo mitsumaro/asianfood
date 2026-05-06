@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asian Hatbazaar & Food</title>
+    <meta
+      name="description"
+      content="本格的なアジアンフードとハラル食材を提供するAsian Hatbazaar & Foodの公式サイトです。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/favicon.ico" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__logo">
+          <a href="#" class="header__logo-link">
+            <img
+              src="img/logo.webp"
+              alt="Asian Hatbazaar & Food"
+              width="40"
+              height="40"
+            />
+          </a>
+        </h1>
+        <nav
+          id="global-nav"
+          class="header__nav"
+          aria-label="メインナビゲーション"
+        >
+          <ul class="header__list">
+            <li class="header__item"><a href="#about">About</a></li>
+            <li class="header__item"><a href="#values">こだわり</a></li>
+            <li class="header__item"><a href="#menu">Menu</a></li>
+            <li class="header__item"><a href="#hatbazaar">Hatbazaar</a></li>
+            <li class="header__item"><a href="#access">アクセス</a></li>
+          </ul>
+          <a href="en/" class="header__lang" aria-label="英語に切り替え"
+            >EN</a
+          >
+        </nav>
+        <button
+          class="header__toggle"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="global-nav"
+        >
+          <span class="header__toggle-line"></span>
+          <span class="header__toggle-line"></span>
+          <span class="header__toggle-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero__bg">
+          <picture>
+            <!-- SP AVIF -->
+            <source
+              media="(max-width: 767px)"
+              srcset="img/asianFoodFvSp.avif"
+              type="image/avif"
+            />
+            <!-- SP WebP -->
+            <source
+              media="(max-width: 767px)"
+              srcset="img/asianFoodFvSp.webp"
+              type="image/webp"
+            />
+            <!-- PC AVIF -->
+            <source
+              srcset="img/asianFoodFv.avif"
+              type="image/avif"
+            />
+            <!-- PC WebP -->
+            <source
+              srcset="img/asianFoodFv.webp"
+              type="image/webp"
+            />
+            <!-- フォールバック -->
+            <img
+              src="img/asianFoodFv.jpg"
+              alt="Asian Hatbazaar & Food 店舗外観"
+              class="hero__img"
+              width="1200"
+              height="600"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
+        <div class="hero__content">
+          <!-- キャッチコピーなどが画像に含まれているようなので、ここでは構造のみ -->
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about section">
+        <div class="about__container">
+          <div class="about__content">
+            <h2 class="section-title section-title--about">About</h2>
+            <p class="about__text">
+              Asian Hatbazaar & Food
+              は、アジア各地の料理と雑貨を楽しめるお店です。
+              スパイス香る家庭の味や、市場やバザールで出会うような個性豊かな雑貨たち。
+              にぎやかであたたかく、どこか懐かしいアジアの空気感を大切にしながら、
+              食べること、選ぶこと、その時間ごと日本で気軽に楽しめる場所をお届けします。
+            </p>
+          </div>
+          <div class="about__image">
+            <picture>
+              <!-- SP AVIF -->
+              <source
+                media="(max-width: 767px)"
+                srcset="img/storeManagerSp.avif"
+                type="image/avif"
+              />
+              <!-- SP WebP -->
+              <source
+                media="(max-width: 767px)"
+                srcset="img/storeManagerSp.webp"
+                type="image/webp"
+              />
+              <!-- PC AVIF -->
+              <source
+                srcset="img/storeManager.avif"
+                type="image/avif"
+              />
+              <!-- PC WebP -->
+              <source
+                srcset="img/storeManager.webp"
+                type="image/webp"
+              />
+              <!-- フォールバック -->
+              <img
+                src="img/storeManager.jpg"
+                alt="店長"
+                width="650"
+                height="420"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </div>
+        </div>
+      </section>
+
+      <!-- Values Section -->
+      <section id="values" class="values section">
+        <div class="container">
+          <h2 class="section-title section-title--center section-title--values">
+            <span class="section-title__bg">OUR VALUES</span>
+            <span class="section-title__main">こだわり</span>
+          </h2>
+
+          <div class="values__list">
+            <!-- Item 1: Meat (Rich & Flavorful meat) -->
+            <div class="value-item">
+              <div class="value-item__image">
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/deliciousMeatSp.avif"
+                    type="image/avif"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/deliciousMeatSp.webp"
+                    type="image/webp"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="img/deliciousMeat.avif"
+                    type="image/avif"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="img/deliciousMeat.webp"
+                    type="image/webp"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="img/deliciousMeat.jpg"
+                    alt="回転グリルのジューシーなお肉"
+                    width="550"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <div class="value-item__content">
+                <h3 class="value-item__title">旨みたっぷりのお肉</h3>
+                <p class="value-item__text">
+                  スパイスの配合や焼き加減にこだわって、肉の美味しさをしっかり引き出しています。香ばしくてジューシー、みんなで気軽に食べられるケバブを目指しています。
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 2: Sauce (Homemade Original Sauce) -->
+            <div class="value-item value-item--reverse">
+              <div class="value-item__image">
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/originalSauceSp.avif"
+                    type="image/avif"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/originalSauceSp.webp"
+                    type="image/webp"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="img/originalSauce.avif"
+                    type="image/avif"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="img/originalSauce.webp"
+                    type="image/webp"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="img/originalSauce.jpg"
+                    alt="自家製オリジナルソース"
+                    width="550"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <div class="value-item__content">
+                <h3 class="value-item__title">自家製オリジナルソース</h3>
+                <p class="value-item__text">
+                  ソースはすべて自家製のオリジナル。辛さや風味の違う数種類を用意しているので、その日の気分や好みに合わせて選べます。ほかのケバブ屋とはちょっと違う味をお楽しみください。
+                </p>
+              </div>
+            </div>
+
+            <!-- Item 3: Kebabs (Easy-to-Enjoy Kebabs) -->
+            <div class="value-item">
+              <div class="value-item__image">
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/easytoEnjoyKebabSp.avif"
+                    type="image/avif"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/easytoEnjoyKebabSp.webp"
+                    type="image/webp"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="img/easytoEnjoyKebab.avif"
+                    type="image/avif"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="img/easytoEnjoyKebab.webp"
+                    type="image/webp"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="img/easytoEnjoyKebab.jpg"
+                    alt="手軽に楽しめるケバブ"
+                    width="550"
+                    height="420"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <div class="value-item__content">
+                <h3 class="value-item__title">手軽に楽しめるケバブ</h3>
+                <p class="value-item__text">
+                  本格的だけど、気取らず楽しめるのが私たちのケバブ。ふらっと立ち寄って、さっと食べられる。そんな身近な一杯を大切にしています
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Menu Section -->
+      <section id="menu" class="menu section">
+        <div class="container">
+          <h2 class="section-title section-title--center section-title--white">
+            Menu
+          </h2>
+          <div class="menu__grid">
+            <div class="menu-item">
+              <div class="menu-item__img-wrapper">
+                <picture>
+                  <source srcset="img/rank1.avif" type="image/avif" />
+                  <source srcset="img/rank1.webp" type="image/webp" />
+                  <img
+                    src="img/rank1.png"
+                    alt="人気No.1"
+                    class="badge-img"
+                    width="150"
+                    height="100"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/menu1Sp.avif"
+                    type="image/avif"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/menu1Sp.webp"
+                    type="image/webp"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="img/menu1.avif"
+                    type="image/avif"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="img/menu1.webp"
+                    type="image/webp"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="img/menu1.jpg"
+                    alt="チキンケバブライス"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <h3 class="menu-item__name">チキンケバブライス</h3>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__img-wrapper">
+                <picture>
+                  <source srcset="img/classic.avif" type="image/avif" />
+                  <source srcset="img/classic.webp" type="image/webp" />
+                  <img
+                    src="img/classic.png"
+                    alt="定番！"
+                    class="badge-img"
+                    width="150"
+                    height="100"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/menu2Sp.avif"
+                    type="image/avif"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/menu2Sp.webp"
+                    type="image/webp"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="img/menu2.avif"
+                    type="image/avif"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="img/menu2.webp"
+                    type="image/webp"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="img/menu2.jpg"
+                    alt="チキンケバブライス"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <h3 class="menu-item__name">チキンケバブライス</h3>
+            </div>
+            <div class="menu-item">
+              <div class="menu-item__img-wrapper">
+                <picture>
+                  <source srcset="img/shaffPick.avif" type="image/avif" />
+                  <source srcset="img/shaffPick.webp" type="image/webp" />
+                  <img
+                    src="img/shaffPick.png"
+                    alt="おすすめ！"
+                    class="badge-img"
+                    width="150"
+                    height="100"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/menu3Sp.avif"
+                    type="image/avif"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="img/menu3Sp.webp"
+                    type="image/webp"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="img/menu3.avif"
+                    type="image/avif"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="img/menu3.webp"
+                    type="image/webp"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="img/menu3.jpg"
+                    alt="チキンケバブライス"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </div>
+              <h3 class="menu-item__name">チキンケバブライス</h3>
+            </div>
+          </div>
+          <div class="menu__footer">
+            <a href="#" class="btn btn--secondary">その他メニューを見る</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hatbazaar Section -->
+      <section id="hatbazaar" class="hatbazaar section">
+        <div class="container hatbazaar__container">
+          <div class="hatbazaar__content">
+            <h2 class="section-title">Hatbazaar</h2>
+            <p class="hatbazaar__text">
+              Hatbazaar（ハットバザール）は、アジアの暮らしの中で親しまれてきた雑貨やスパイス、食品を集めたコーナーです。市場やバザールの棚に並ぶような、個性のあるアイテムたち。料理に使えるスパイスから、日常に取り入れやすい雑貨まで、気になったものを手に取って、ぜひのぞいてみてください。
+            </p>
+          </div>
+          <!-- role="region" と aria-roledescription="carousel" でスクリーンリーダーにカルーセルであることを明示 -->
+          <section
+            class="hatbazaar__image-slider"
+            aria-label="Hatbazaar店内写真ギャラリー"
+            aria-roledescription="carousel"
+          >
+            <!-- リストとしてマークアップし、aria-live="polite" で切り替えを通知 -->
+            <ul id="hatbazaar-items" class="slider-wrapper" aria-live="polite">
+              <li
+                class="slider-slide"
+                aria-role="group"
+                aria-roledescription="slide"
+                aria-label="1 / 6"
+              >
+                <picture>
+                  <source srcset="img/slide1.avif" type="image/avif" />
+                  <source srcset="img/slide1.webp" type="image/webp" />
+                  <img
+                    src="img/slide1.jpg"
+                    alt="店内画像1: 商品棚の様子"
+                    width="950"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li
+                class="slider-slide"
+                aria-role="group"
+                aria-roledescription="slide"
+                aria-label="2 / 6"
+              >
+                <picture>
+                  <source srcset="img/slide2.avif" type="image/avif" />
+                  <source srcset="img/slide2.webp" type="image/webp" />
+                  <img
+                    src="img/slide2.jpg"
+                    alt="店内画像2: スパイスコーナー"
+                    width="950"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li
+                class="slider-slide"
+                aria-role="group"
+                aria-roledescription="slide"
+                aria-label="3 / 6"
+              >
+                <picture>
+                  <source srcset="img/slide3.avif" type="image/avif" />
+                  <source srcset="img/slide3.webp" type="image/webp" />
+                  <img
+                    src="img/slide3.jpg"
+                    alt="店内画像3"
+                    width="950"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li
+                class="slider-slide"
+                aria-role="group"
+                aria-roledescription="slide"
+                aria-label="4 / 6"
+              >
+                <picture>
+                  <source srcset="img/slide4.avif" type="image/avif" />
+                  <source srcset="img/slide4.webp" type="image/webp" />
+                  <img
+                    src="img/slide4.jpg"
+                    alt="店内画像4"
+                    width="950"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li
+                class="slider-slide"
+                aria-role="group"
+                aria-roledescription="slide"
+                aria-label="5 / 6"
+              >
+                <picture>
+                  <source srcset="img/slide5.avif" type="image/avif" />
+                  <source srcset="img/slide5.webp" type="image/webp" />
+                  <img
+                    src="img/slide5.jpg"
+                    alt="店内画像5"
+                    width="950"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+              <li
+                class="slider-slide"
+                aria-role="group"
+                aria-roledescription="slide"
+                aria-label="6 / 6"
+              >
+                <picture>
+                  <source srcset="img/slide6.avif" type="image/avif" />
+                  <source srcset="img/slide6.webp" type="image/webp" />
+                  <img
+                    src="img/slide6.jpg"
+                    alt="店内画像6"
+                    width="950"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
+              </li>
+            </ul>
+            
+            <div class="slider-nav">
+              <div class="slider-controls">
+                <!-- コントロールボタン -->
+                <button
+                  class="slider-prev"
+                  type="button"
+                  aria-controls="hatbazaar-items"
+                  aria-label="前のスライド"
+                >
+                  &larr;
+                </button>
+                <button
+                  class="slider-next"
+                  type="button"
+                  aria-controls="hatbazaar-items"
+                  aria-label="次のスライド"
+                >
+                  &rarr;
+                </button>
+              </div>
+              <!-- ドットナビゲーション（タブリストとして機能させる） -->
+              <div class="slider-dots" role="tablist" aria-label="スライド選択">
+                <!-- JSで動的にボタンを追加 -->
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <!-- Access / Footer Section -->
+      <section id="access" class="access section">
+        <div class="container access__container">
+          <div class="access__info">
+            <h2 class="section-title section-title--white access__title">
+              Asian Hatbazaar &<br />Food
+            </h2>
+            <address class="access__address">
+              <p>
+                〒133-0056 Tokyo, Edogawa City, Minamikoiwa, 8 Chome−12−6<br />
+                中村マンション No.2 102
+              </p>
+              <br />
+              <p>JR総武線「小岩駅」南口から徒歩3分</p>
+            </address>
+            <div class="access__hours">
+              <h3 class="access__hours-title">営業時間</h3>
+              <div class="access__hours-row">
+                <span class="access__label">年中無休</span>
+                <span class="access__time">10:00 〜 21:00（平日）</span>
+              </div>
+              <div class="access__hours-row">
+                <span class="access__label"></span>
+                <span class="access__time">10:00 〜 23:00（土日）</span>
+              </div>
+            </div>
+          </div>
+          <div class="access__map">
+            <!-- マップのプレースホルダー -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.701366760971!2d139.88217407653366!3d35.73356232709621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601885690e3e321b%3A0x2de0807e420ac549!2sAsian%20Hat%20bazaar%26Food!5e0!3m2!1sja!2sjp!4v1770701748529!5m2!1sja!2sjp"
+              width="600"
+              height="450"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__container">
+        <div class="footer__links">
+          <div class="footer__col">
+            <h3 class="footer__heading">Follow Us</h3>
+            <ul class="social-list">
+              <li><a href="#" aria-label="Instagram">Instagram</a></li>
+              <li><a href="#" aria-label="Facebook">Facebook</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__heading">Information</h3>
+            <ul class="footer-nav">
+              <li><a href="#about">About</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="#access">Access</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h3 class="footer__heading">Contact</h3>
+            <p>Phone: 03-0000-0000</p>
+            <p>contact@example.com</p>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <small
+            >&copy; 2024 Asian Hatbazaar & Food. All Rights Reserved.</small
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
