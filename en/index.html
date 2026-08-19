@@ -14,8 +14,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="icon" href="../img/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script type="module" src="/assets/js/main.js"></script>
+    <link rel="icon" href="/assets/img/favicon.ico" />
   </head>
   <body>
     <header class="header">
@@ -23,7 +24,7 @@
         <h1 class="header__logo">
           <a href="#" class="header__logo-link">
             <img
-              src="../img/logo.webp"
+              src="/assets/img/logo.webp"
               alt="Asian Hatbazaar & Food"
               width="40"
               height="40"
@@ -38,12 +39,22 @@
             <li class="header__item"><a href="#hatbazaar">Hatbazaar</a></li>
             <li class="header__item"><a href="#access">Access</a></li>
           </ul>
-          <a
-            href="../"
-            class="header__lang"
-            aria-label="Switch to Japanese"
-            >JP</a
-          >
+          <div class="header__lang" role="group" aria-label="Language">
+            <a
+              href="/"
+              class="header__lang-item"
+              hreflang="ja"
+              lang="ja"
+              aria-label="Switch to Japanese"
+              >JP</a
+            >
+            <span class="header__lang-sep" aria-hidden="true">/</span>
+            <span
+              class="header__lang-item header__lang-item--current"
+              aria-current="true"
+              >EN</span
+            >
+          </div>
         </nav>
 
         <button
@@ -67,32 +78,40 @@
             <!-- SP AVIF -->
             <source
               media="(max-width: 767px)"
-              srcset="../img/asianFoodFvSp.avif"
+              srcset="/assets/img/asianFoodFvSp.avif"
               type="image/avif"
+              width="1000"
+              height="750"
             />
             <!-- SP WebP -->
             <source
               media="(max-width: 767px)"
-              srcset="../img/asianFoodFvSp.webp"
+              srcset="/assets/img/asianFoodFvSp.webp"
               type="image/webp"
+              width="1000"
+              height="750"
             />
             <!-- PC AVIF -->
             <source
-              srcset="../img/asianFoodFv.avif"
+              srcset="/assets/img/asianFoodFv.avif"
               type="image/avif"
+              width="1920"
+              height="1004"
             />
             <!-- PC WebP -->
             <source
-              srcset="../img/asianFoodFv.webp"
+              srcset="/assets/img/asianFoodFv.webp"
               type="image/webp"
+              width="1920"
+              height="1004"
             />
             <!-- Fallback -->
             <img
-              src="../img/asianFoodFv.jpg"
-              alt="Asian Hatbazaar & Food Storefront"
+              src="/assets/img/asianFoodFv.jpg"
+              alt=""
               class="hero__img"
-              width="1200"
-              height="600"
+              width="1920"
+              height="1004"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -104,7 +123,7 @@
 
       <!-- About Section -->
       <section id="about" class="about section">
-        <div class="about__container">
+        <div class="container about__container">
           <div class="about__content">
             <h2 class="section-title section-title--about">About</h2>
             <p class="about__text">
@@ -123,31 +142,39 @@
               <!-- SP AVIF -->
               <source
                 media="(max-width: 767px)"
-                srcset="../img/storeManagerSp.avif"
+                srcset="/assets/img/storeManagerSp.avif"
                 type="image/avif"
+                width="342"
+                height="369"
               />
               <!-- SP WebP -->
               <source
                 media="(max-width: 767px)"
-                srcset="../img/storeManagerSp.webp"
+                srcset="/assets/img/storeManagerSp.webp"
                 type="image/webp"
+                width="342"
+                height="369"
               />
               <!-- PC AVIF -->
               <source
-                srcset="../img/storeManager.avif"
+                srcset="/assets/img/storeManager.avif"
                 type="image/avif"
+                width="570"
+                height="615"
               />
               <!-- PC WebP -->
               <source
-                srcset="../img/storeManager.webp"
+                srcset="/assets/img/storeManager.webp"
                 type="image/webp"
+                width="570"
+                height="615"
               />
               <!-- Fallback -->
               <img
-                src="../img/storeManager.jpg"
+                src="/assets/img/storeManager.jpg"
                 alt="Store Manager"
-                width="650"
-                height="420"
+                width="570"
+                height="615"
                 loading="lazy"
                 decoding="async"
               />
@@ -166,42 +193,7 @@
 
           <div class="values__list">
             <!-- Item 1: Meat (Rich & Flavorful meat) -->
-            <div class="value-item">
-              <div class="value-item__image">
-                <picture>
-                  <!-- SP AVIF -->
-                  <source
-                    media="(max-width: 767px)"
-                    srcset="../img/deliciousMeatSp.avif"
-                    type="image/avif"
-                  />
-                  <!-- SP WebP -->
-                  <source
-                    media="(max-width: 767px)"
-                    srcset="../img/deliciousMeatSp.webp"
-                    type="image/webp"
-                  />
-                  <!-- PC AVIF -->
-                  <source
-                    srcset="../img/deliciousMeat.avif"
-                    type="image/avif"
-                  />
-                  <!-- PC WebP -->
-                  <source
-                    srcset="../img/deliciousMeat.webp"
-                    type="image/webp"
-                  />
-                  <!-- Fallback -->
-                  <img
-                    src="../img/deliciousMeat.jpg"
-                    alt="Rich & Flavorful meat"
-                    width="550"
-                    height="420"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
+            <div class="value-item value-item--reverse">
               <div class="value-item__content">
                 <h3 class="value-item__title">Rich & Flavorful meat</h3>
                 <p class="value-item__text">
@@ -210,38 +202,42 @@
                   Fragrant, juicy, and easy to enjoy.
                 </p>
               </div>
-            </div>
-
-            <!-- Item 2: Sauce (Homemade Original Sauce) -->
-            <div class="value-item value-item--reverse">
               <div class="value-item__image">
                 <picture>
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/originalSauceSp.avif"
+                    srcset="/assets/img/deliciousMeatSp.avif"
                     type="image/avif"
+                    width="342"
+                    height="261"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/originalSauceSp.webp"
+                    srcset="/assets/img/deliciousMeatSp.webp"
                     type="image/webp"
+                    width="342"
+                    height="261"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="../img/originalSauce.avif"
+                    srcset="/assets/img/deliciousMeat.avif"
                     type="image/avif"
+                    width="550"
+                    height="420"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="../img/originalSauce.webp"
+                    srcset="/assets/img/deliciousMeat.webp"
                     type="image/webp"
+                    width="550"
+                    height="420"
                   />
                   <!-- Fallback -->
                   <img
-                    src="../img/originalSauce.jpg"
-                    alt="Homemade Original Sauce"
+                    src="/assets/img/deliciousMeat.jpg"
+                    alt="Rich & Flavorful meat"
                     width="550"
                     height="420"
                     loading="lazy"
@@ -249,6 +245,10 @@
                   />
                 </picture>
               </div>
+            </div>
+
+            <!-- Item 2: Sauce (Homemade Original Sauce) -->
+            <div class="value-item">
               <div class="value-item__content">
                 <h3 class="value-item__title">Homemade Original Sauce</h3>
                 <p class="value-item__text">
@@ -258,38 +258,42 @@
                   different from any others.
                 </p>
               </div>
-            </div>
-
-            <!-- Item 3: Kebabs (Easy-to-Enjoy Kebabs) -->
-            <div class="value-item">
               <div class="value-item__image">
                 <picture>
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/easytoEnjoyKebabSp.avif"
+                    srcset="/assets/img/originalSauceSp.avif"
                     type="image/avif"
+                    width="342"
+                    height="261"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/easytoEnjoyKebabSp.webp"
+                    srcset="/assets/img/originalSauceSp.webp"
                     type="image/webp"
+                    width="342"
+                    height="261"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="../img/easytoEnjoyKebab.avif"
+                    srcset="/assets/img/originalSauce.avif"
                     type="image/avif"
+                    width="550"
+                    height="420"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="../img/easytoEnjoyKebab.webp"
+                    srcset="/assets/img/originalSauce.webp"
                     type="image/webp"
+                    width="550"
+                    height="420"
                   />
                   <!-- Fallback -->
                   <img
-                    src="../img/easytoEnjoyKebab.jpg"
-                    alt="Easy-to-Enjoy Kebabs"
+                    src="/assets/img/originalSauce.jpg"
+                    alt="Homemade Original Sauce"
                     width="550"
                     height="420"
                     loading="lazy"
@@ -297,6 +301,10 @@
                   />
                 </picture>
               </div>
+            </div>
+
+            <!-- Item 3: Kebabs (Easy-to-Enjoy Kebabs) -->
+            <div class="value-item value-item--reverse">
               <div class="value-item__content">
                 <h3 class="value-item__title">Easy-to-Enjoy Kebabs</h3>
                 <p class="value-item__text">
@@ -304,6 +312,49 @@
                   Perfect for a quick stop—just drop by, grab a bite, and enjoy
                   anytime.
                 </p>
+              </div>
+              <div class="value-item__image">
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="/assets/img/easytoEnjoyKebabSp.avif"
+                    type="image/avif"
+                    width="342"
+                    height="292"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="/assets/img/easytoEnjoyKebabSp.webp"
+                    type="image/webp"
+                    width="342"
+                    height="292"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="/assets/img/easytoEnjoyKebab.avif"
+                    type="image/avif"
+                    width="600"
+                    height="500"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="/assets/img/easytoEnjoyKebab.webp"
+                    type="image/webp"
+                    width="600"
+                    height="500"
+                  />
+                  <!-- Fallback -->
+                  <img
+                    src="/assets/img/easytoEnjoyKebab.jpg"
+                    alt="Easy-to-Enjoy Kebabs"
+                    width="600"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -320,10 +371,10 @@
             <div class="menu-item">
               <div class="menu-item__img-wrapper">
                 <picture>
-                  <source srcset="../img/rank1En.avif" type="image/avif" />
-                  <source srcset="../img/rank1En.webp" type="image/webp" />
+                  <source srcset="/assets/img/rank1En.avif" type="image/avif" width="150" height="98" />
+                  <source srcset="/assets/img/rank1En.webp" type="image/webp" width="150" height="98" />
                   <img
-                    src="../img/rank1En.png"
+                    src="/assets/img/rank1En.png"
                     alt="Best Seller!"
                     class="badge-img"
                     width="150"
@@ -336,43 +387,53 @@
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/menu1Sp.avif"
+                    srcset="/assets/img/menu1Sp.avif"
                     type="image/avif"
+                    width="300"
+                    height="300"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/menu1Sp.webp"
+                    srcset="/assets/img/menu1Sp.webp"
                     type="image/webp"
+                    width="300"
+                    height="300"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="../img/menu1.avif"
+                    srcset="/assets/img/menu1.avif"
                     type="image/avif"
+                    width="400"
+                    height="400"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="../img/menu1.webp"
+                    srcset="/assets/img/menu1.webp"
                     type="image/webp"
+                    width="400"
+                    height="400"
                   />
                   <!-- Fallback -->
                   <img
-                    src="../img/menu1.jpg"
-                    alt="Chicken Kebab Rice"
+                    src="/assets/img/menu1.jpg"
+                    alt=""
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
                 </picture>
               </div>
-              <h3 class="menu-item__name">Chicken Kebab Rice</h3>
+              <h3 class="menu-item__name">Mixed Kebab Wrap</h3>
             </div>
             <div class="menu-item">
               <div class="menu-item__img-wrapper">
                 <picture>
-                  <source srcset="../img/classicEn.avif" type="image/avif" />
-                  <source srcset="../img/classicEn.webp" type="image/webp" />
+                  <source srcset="/assets/img/classicEn.avif" type="image/avif" width="150" height="100" />
+                  <source srcset="/assets/img/classicEn.webp" type="image/webp" width="150" height="100" />
                   <img
-                    src="../img/classicEn.png"
+                    src="/assets/img/classicEn.png"
                     alt="Classic!"
                     class="badge-img"
                     width="150"
@@ -385,29 +446,39 @@
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/menu2Sp.avif"
+                    srcset="/assets/img/menu2Sp.avif"
                     type="image/avif"
+                    width="300"
+                    height="300"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/menu2Sp.webp"
+                    srcset="/assets/img/menu2Sp.webp"
                     type="image/webp"
+                    width="300"
+                    height="300"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="../img/menu2.avif"
+                    srcset="/assets/img/menu2.avif"
                     type="image/avif"
+                    width="400"
+                    height="400"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="../img/menu2.webp"
+                    srcset="/assets/img/menu2.webp"
                     type="image/webp"
+                    width="400"
+                    height="400"
                   />
                   <!-- Fallback -->
                   <img
-                    src="../img/menu2.jpg"
-                    alt="Chicken Kebab Rice"
+                    src="/assets/img/menu2.jpg"
+                    alt=""
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
@@ -418,10 +489,10 @@
             <div class="menu-item">
               <div class="menu-item__img-wrapper">
                 <picture>
-                  <source srcset="../img/shaffPickEn.avif" type="image/avif" />
-                  <source srcset="../img/shaffPickEn.webp" type="image/webp" />
+                  <source srcset="/assets/img/shaffPickEn.avif" type="image/avif" width="150" height="100" />
+                  <source srcset="/assets/img/shaffPickEn.webp" type="image/webp" width="150" height="100" />
                   <img
-                    src="../img/shaffPickEn.png"
+                    src="/assets/img/shaffPickEn.png"
                     alt="Staff Pick!"
                     class="badge-img"
                     width="150"
@@ -434,39 +505,55 @@
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/menu3Sp.avif"
+                    srcset="/assets/img/menu3Sp.avif"
                     type="image/avif"
+                    width="300"
+                    height="300"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="../img/menu3Sp.webp"
+                    srcset="/assets/img/menu3Sp.webp"
                     type="image/webp"
+                    width="300"
+                    height="300"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="../img/menu3.avif"
+                    srcset="/assets/img/menu3.avif"
                     type="image/avif"
+                    width="400"
+                    height="400"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="../img/menu3.webp"
+                    srcset="/assets/img/menu3.webp"
                     type="image/webp"
+                    width="400"
+                    height="400"
                   />
                   <!-- Fallback -->
                   <img
-                    src="../img/menu3.jpg"
-                    alt="Chicken Kebab Rice"
+                    src="/assets/img/menu3.jpg"
+                    alt=""
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
                 </picture>
               </div>
-              <h3 class="menu-item__name">Chicken Kebab Rice</h3>
+              <h3 class="menu-item__name">Chicken Wrap</h3>
             </div>
           </div>
           <div class="menu__footer">
-            <a href="#" class="btn btn--secondary">Explore the Menu</a>
+            <a
+              class="btn btn--secondary externalLink menu__footer__link"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Explore the Menu</a
+            >
           </div>
         </div>
       </section>
@@ -499,10 +586,10 @@
                 aria-label="1 / 6"
               >
                 <picture>
-                  <source srcset="../img/slide1.avif" type="image/avif" />
-                  <source srcset="../img/slide1.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide1.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide1.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="../img/slide1.jpg"
+                    src="/assets/img/slide1.jpg"
                     alt="店内画像1: 商品棚の様子"
                     width="950"
                     height="500"
@@ -518,10 +605,10 @@
                 aria-label="2 / 6"
               >
                 <picture>
-                  <source srcset="../img/slide2.avif" type="image/avif" />
-                  <source srcset="../img/slide2.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide2.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide2.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="../img/slide2.jpg"
+                    src="/assets/img/slide2.jpg"
                     alt="店内画像2: スパイスコーナー"
                     width="950"
                     height="500"
@@ -537,10 +624,10 @@
                 aria-label="3 / 6"
               >
                 <picture>
-                  <source srcset="../img/slide3.avif" type="image/avif" />
-                  <source srcset="../img/slide3.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide3.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide3.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="../img/slide3.jpg"
+                    src="/assets/img/slide3.jpg"
                     alt="店内画像3"
                     width="950"
                     height="500"
@@ -556,10 +643,10 @@
                 aria-label="4 / 6"
               >
                 <picture>
-                  <source srcset="../img/slide4.avif" type="image/avif" />
-                  <source srcset="../img/slide4.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide4.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide4.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="../img/slide4.jpg"
+                    src="/assets/img/slide4.jpg"
                     alt="店内画像4"
                     width="950"
                     height="500"
@@ -575,10 +662,10 @@
                 aria-label="5 / 6"
               >
                 <picture>
-                  <source srcset="../img/slide5.avif" type="image/avif" />
-                  <source srcset="../img/slide5.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide5.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide5.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="../img/slide5.jpg"
+                    src="/assets/img/slide5.jpg"
                     alt="店内画像5"
                     width="950"
                     height="500"
@@ -594,10 +681,10 @@
                 aria-label="6 / 6"
               >
                 <picture>
-                  <source srcset="../img/slide6.avif" type="image/avif" />
-                  <source srcset="../img/slide6.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide6.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide6.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="../img/slide6.jpg"
+                    src="/assets/img/slide6.jpg"
                     alt="店内画像6"
                     width="950"
                     height="500"
@@ -687,31 +774,46 @@
           <div class="footer__col">
             <h3 class="footer__heading">Follow Us</h3>
             <ul class="social-list">
-              <li><a href="#" aria-label="Instagram">Instagram</a></li>
-              <li><a href="#" aria-label="Facebook">Facebook</a></li>
+              <li>
+                <a
+                  class="externalLink"
+                  href="https://www.instagram.com/asian_hatbazar_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                >
+              </li>
             </ul>
           </div>
           <div class="footer__col">
-            <h3 class="footer__heading">Information</h3>
+            <h3 class="footer__heading">Order Online</h3>
             <ul class="footer-nav">
-              <li><a href="#about">About</a></li>
-              <li><a href="#menu">Menu</a></li>
-              <li><a href="#access">Access</a></li>
+              <li>
+                <a
+                  class="externalLink"
+                  href="https://www.ubereats.com/store/%E3%82%A2%E3%82%B7%E3%82%A2%E3%83%B3-%E3%83%8F%E3%83%83%E3%83%88%E3%83%8F%E3%82%B5%E3%83%BC%E3%83%AB-%26-%E3%83%95%E3%83%BC%E3%83%88/PdrBpRG1T5Ge9BL66TMKfA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >UberEats</a
+                >
+              </li>
+              <li>Rocket Now</li>
             </ul>
           </div>
           <div class="footer__col">
             <h3 class="footer__heading">Contact</h3>
-            <p>Phone: 03-0000-0000</p>
-            <p>contact@example.com</p>
+            <p><a href="tel:07023591981">070-2359-1981</a></p>
+            <p>
+              <a href="mailto:asianhatbazaar@gmail.com"
+                >asianhatbazaar@gmail.com</a
+              >
+            </p>
           </div>
         </div>
         <div class="footer__copyright">
-          <small
-            >&copy; 2024 Asian Hatbazaar & Food. All Rights Reserved.</small
-          >
+          <small>&copy;Asian Hatbazaar &amp; Food</small>
         </div>
       </div>
     </footer>
-    <script src="../js/script.js"></script>
   </body>
 </html>

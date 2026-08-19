@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="icon" href="/assets/img/favicon.ico" />
   </head>
   <body>
     <header class="header">
@@ -23,7 +23,7 @@
         <h1 class="header__logo">
           <a href="#" class="header__logo-link">
             <img
-              src="img/logo.webp"
+              src="/assets/img/logo.webp"
               alt="Asian Hatbazaar & Food"
               width="40"
               height="40"
@@ -42,9 +42,22 @@
             <li class="header__item"><a href="#hatbazaar">Hatbazaar</a></li>
             <li class="header__item"><a href="#access">アクセス</a></li>
           </ul>
-          <a href="en/" class="header__lang" aria-label="英語に切り替え"
-            >EN</a
-          >
+          <div class="header__lang" role="group" aria-label="言語切り替え">
+            <span
+              class="header__lang-item header__lang-item--current"
+              aria-current="true"
+              >JP</span
+            >
+            <span class="header__lang-sep" aria-hidden="true">/</span>
+            <a
+              href="en/"
+              class="header__lang-item"
+              hreflang="en"
+              lang="en"
+              aria-label="Switch to English"
+              >EN</a
+            >
+          </div>
         </nav>
         <button
           class="header__toggle"
@@ -67,32 +80,30 @@
             <!-- SP AVIF -->
             <source
               media="(max-width: 767px)"
-              srcset="img/asianFoodFvSp.avif"
+              srcset="/assets/img/asianFoodFvSp.avif"
               type="image/avif"
+              width="1000"
+              height="750"
             />
             <!-- SP WebP -->
             <source
               media="(max-width: 767px)"
-              srcset="img/asianFoodFvSp.webp"
+              srcset="/assets/img/asianFoodFvSp.webp"
               type="image/webp"
+              width="1000"
+              height="750"
             />
             <!-- PC AVIF -->
-            <source
-              srcset="img/asianFoodFv.avif"
-              type="image/avif"
-            />
+            <source srcset="/assets/img/asianFoodFv.avif" type="image/avif" width="1920" height="1004" />
             <!-- PC WebP -->
-            <source
-              srcset="img/asianFoodFv.webp"
-              type="image/webp"
-            />
+            <source srcset="/assets/img/asianFoodFv.webp" type="image/webp" width="1920" height="1004" />
             <!-- フォールバック -->
             <img
-              src="img/asianFoodFv.jpg"
-              alt="Asian Hatbazaar & Food 店舗外観"
+              src="/assets/img/asianFoodFv.jpg"
+              alt=""
               class="hero__img"
-              width="1200"
-              height="600"
+              width="1920"
+              height="1004"
               loading="eager"
               fetchpriority="high"
               decoding="async"
@@ -106,7 +117,7 @@
 
       <!-- About Section -->
       <section id="about" class="about section">
-        <div class="about__container">
+        <div class="container about__container">
           <div class="about__content">
             <h2 class="section-title section-title--about">About</h2>
             <p class="about__text">
@@ -122,31 +133,39 @@
               <!-- SP AVIF -->
               <source
                 media="(max-width: 767px)"
-                srcset="img/storeManagerSp.avif"
+                srcset="/assets/img/storeManagerSp.avif"
                 type="image/avif"
+                width="342"
+                height="369"
               />
               <!-- SP WebP -->
               <source
                 media="(max-width: 767px)"
-                srcset="img/storeManagerSp.webp"
+                srcset="/assets/img/storeManagerSp.webp"
                 type="image/webp"
+                width="342"
+                height="369"
               />
               <!-- PC AVIF -->
               <source
-                srcset="img/storeManager.avif"
+                srcset="/assets/img/storeManager.avif"
                 type="image/avif"
+                width="570"
+                height="615"
               />
               <!-- PC WebP -->
               <source
-                srcset="img/storeManager.webp"
+                srcset="/assets/img/storeManager.webp"
                 type="image/webp"
+                width="570"
+                height="615"
               />
               <!-- フォールバック -->
               <img
-                src="img/storeManager.jpg"
+                src="/assets/img/storeManager.jpg"
                 alt="店長"
-                width="650"
-                height="420"
+                width="570"
+                height="615"
                 loading="lazy"
                 decoding="async"
               />
@@ -165,34 +184,48 @@
 
           <div class="values__list">
             <!-- Item 1: Meat (Rich & Flavorful meat) -->
-            <div class="value-item">
+            <div class="value-item value-item--reverse">
+              <div class="value-item__content">
+                <h3 class="value-item__title">旨みたっぷりのお肉</h3>
+                <p class="value-item__text">
+                  スパイスの配合や焼き加減にこだわって、肉の美味しさをしっかり引き出しています。香ばしくてジューシー、みんなで気軽に食べられるケバブを目指しています。
+                </p>
+              </div>
               <div class="value-item__image">
                 <picture>
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/deliciousMeatSp.avif"
+                    srcset="/assets/img/deliciousMeatSp.avif"
                     type="image/avif"
+                    width="342"
+                    height="261"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/deliciousMeatSp.webp"
+                    srcset="/assets/img/deliciousMeatSp.webp"
                     type="image/webp"
+                    width="342"
+                    height="261"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="img/deliciousMeat.avif"
+                    srcset="/assets/img/deliciousMeat.avif"
                     type="image/avif"
+                    width="550"
+                    height="420"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="img/deliciousMeat.webp"
+                    srcset="/assets/img/deliciousMeat.webp"
                     type="image/webp"
+                    width="550"
+                    height="420"
                   />
                   <!-- フォールバック -->
                   <img
-                    src="img/deliciousMeat.jpg"
+                    src="/assets/img/deliciousMeat.jpg"
                     alt="回転グリルのジューシーなお肉"
                     width="550"
                     height="420"
@@ -201,43 +234,51 @@
                   />
                 </picture>
               </div>
-              <div class="value-item__content">
-                <h3 class="value-item__title">旨みたっぷりのお肉</h3>
-                <p class="value-item__text">
-                  スパイスの配合や焼き加減にこだわって、肉の美味しさをしっかり引き出しています。香ばしくてジューシー、みんなで気軽に食べられるケバブを目指しています。
-                </p>
-              </div>
             </div>
 
             <!-- Item 2: Sauce (Homemade Original Sauce) -->
-            <div class="value-item value-item--reverse">
+            <div class="value-item">
+              <div class="value-item__content">
+                <h3 class="value-item__title">自家製オリジナルソース</h3>
+                <p class="value-item__text">
+                  ソースはすべて自家製のオリジナル。辛さや風味の違う数種類を用意しているので、その日の気分や好みに合わせて選べます。ほかのケバブ屋とはちょっと違う味をお楽しみください。
+                </p>
+              </div>
               <div class="value-item__image">
                 <picture>
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/originalSauceSp.avif"
+                    srcset="/assets/img/originalSauceSp.avif"
                     type="image/avif"
+                    width="342"
+                    height="261"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/originalSauceSp.webp"
+                    srcset="/assets/img/originalSauceSp.webp"
                     type="image/webp"
+                    width="342"
+                    height="261"
                   />
                   <!-- PC AVIF -->
                   <source
-                    srcset="img/originalSauce.avif"
+                    srcset="/assets/img/originalSauce.avif"
                     type="image/avif"
+                    width="550"
+                    height="420"
                   />
                   <!-- PC WebP -->
                   <source
-                    srcset="img/originalSauce.webp"
+                    srcset="/assets/img/originalSauce.webp"
                     type="image/webp"
+                    width="550"
+                    height="420"
                   />
                   <!-- フォールバック -->
                   <img
-                    src="img/originalSauce.jpg"
+                    src="/assets/img/originalSauce.jpg"
                     alt="自家製オリジナルソース"
                     width="550"
                     height="420"
@@ -246,56 +287,58 @@
                   />
                 </picture>
               </div>
-              <div class="value-item__content">
-                <h3 class="value-item__title">自家製オリジナルソース</h3>
-                <p class="value-item__text">
-                  ソースはすべて自家製のオリジナル。辛さや風味の違う数種類を用意しているので、その日の気分や好みに合わせて選べます。ほかのケバブ屋とはちょっと違う味をお楽しみください。
-                </p>
-              </div>
             </div>
 
             <!-- Item 3: Kebabs (Easy-to-Enjoy Kebabs) -->
-            <div class="value-item">
-              <div class="value-item__image">
-                <picture>
-                  <!-- SP AVIF -->
-                  <source
-                    media="(max-width: 767px)"
-                    srcset="img/easytoEnjoyKebabSp.avif"
-                    type="image/avif"
-                  />
-                  <!-- SP WebP -->
-                  <source
-                    media="(max-width: 767px)"
-                    srcset="img/easytoEnjoyKebabSp.webp"
-                    type="image/webp"
-                  />
-                  <!-- PC AVIF -->
-                  <source
-                    srcset="img/easytoEnjoyKebab.avif"
-                    type="image/avif"
-                  />
-                  <!-- PC WebP -->
-                  <source
-                    srcset="img/easytoEnjoyKebab.webp"
-                    type="image/webp"
-                  />
-                  <!-- フォールバック -->
-                  <img
-                    src="img/easytoEnjoyKebab.jpg"
-                    alt="手軽に楽しめるケバブ"
-                    width="550"
-                    height="420"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </picture>
-              </div>
+            <div class="value-item value-item--reverse">
               <div class="value-item__content">
                 <h3 class="value-item__title">手軽に楽しめるケバブ</h3>
                 <p class="value-item__text">
                   本格的だけど、気取らず楽しめるのが私たちのケバブ。ふらっと立ち寄って、さっと食べられる。そんな身近な一杯を大切にしています
                 </p>
+              </div>
+              <div class="value-item__image">
+                <picture>
+                  <!-- SP AVIF -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="/assets/img/easytoEnjoyKebabSp.avif"
+                    type="image/avif"
+                    width="342"
+                    height="292"
+                  />
+                  <!-- SP WebP -->
+                  <source
+                    media="(max-width: 767px)"
+                    srcset="/assets/img/easytoEnjoyKebabSp.webp"
+                    type="image/webp"
+                    width="342"
+                    height="292"
+                  />
+                  <!-- PC AVIF -->
+                  <source
+                    srcset="/assets/img/easytoEnjoyKebab.avif"
+                    type="image/avif"
+                    width="600"
+                    height="500"
+                  />
+                  <!-- PC WebP -->
+                  <source
+                    srcset="/assets/img/easytoEnjoyKebab.webp"
+                    type="image/webp"
+                    width="600"
+                    height="500"
+                  />
+                  <!-- フォールバック -->
+                  <img
+                    src="/assets/img/easytoEnjoyKebab.jpg"
+                    alt="手軽に楽しめるケバブ"
+                    width="600"
+                    height="500"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -312,10 +355,10 @@
             <div class="menu-item">
               <div class="menu-item__img-wrapper">
                 <picture>
-                  <source srcset="img/rank1.avif" type="image/avif" />
-                  <source srcset="img/rank1.webp" type="image/webp" />
+                  <source srcset="/assets/img/rank1.avif" type="image/avif" width="150" height="98" />
+                  <source srcset="/assets/img/rank1.webp" type="image/webp" width="150" height="98" />
                   <img
-                    src="img/rank1.png"
+                    src="/assets/img/rank1.png"
                     alt="人気No.1"
                     class="badge-img"
                     width="150"
@@ -328,43 +371,43 @@
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/menu1Sp.avif"
+                    srcset="/assets/img/menu3Sp.avif"
                     type="image/avif"
+                    width="300"
+                    height="300"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/menu1Sp.webp"
+                    srcset="/assets/img/menu3Sp.webp"
                     type="image/webp"
+                    width="300"
+                    height="300"
                   />
                   <!-- PC AVIF -->
-                  <source
-                    srcset="img/menu1.avif"
-                    type="image/avif"
-                  />
+                  <source srcset="/assets/img/menu3.avif" type="image/avif" width="400" height="400" />
                   <!-- PC WebP -->
-                  <source
-                    srcset="img/menu1.webp"
-                    type="image/webp"
-                  />
+                  <source srcset="/assets/img/menu3.webp" type="image/webp" width="400" height="400" />
                   <!-- フォールバック -->
                   <img
-                    src="img/menu1.jpg"
-                    alt="チキンケバブライス"
+                    src="/assets/img/menu3.jpg"
+                    alt=""
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
                 </picture>
               </div>
-              <h3 class="menu-item__name">チキンケバブライス</h3>
+              <h3 class="menu-item__name">ミックスケバブラップ</h3>
             </div>
             <div class="menu-item">
               <div class="menu-item__img-wrapper">
                 <picture>
-                  <source srcset="img/classic.avif" type="image/avif" />
-                  <source srcset="img/classic.webp" type="image/webp" />
+                  <source srcset="/assets/img/classic.avif" type="image/avif" width="150" height="100" />
+                  <source srcset="/assets/img/classic.webp" type="image/webp" width="150" height="100" />
                   <img
-                    src="img/classic.png"
+                    src="/assets/img/classic.png"
                     alt="定番！"
                     class="badge-img"
                     width="150"
@@ -377,43 +420,53 @@
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/menu2Sp.avif"
+                    srcset="/assets/img/menu2Sp.avif"
                     type="image/avif"
+                    width="300"
+                    height="300"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/menu2Sp.webp"
+                    srcset="/assets/img/menu2Sp.webp"
                     type="image/webp"
+                    width="300"
+                    height="300"
                   />
                   <!-- PC AVIF -->
-                  <source
-                    srcset="img/menu2.avif"
-                    type="image/avif"
-                  />
+                  <source srcset="/assets/img/menu2.avif" type="image/avif" width="400" height="400" />
                   <!-- PC WebP -->
-                  <source
-                    srcset="img/menu2.webp"
-                    type="image/webp"
-                  />
+                  <source srcset="/assets/img/menu2.webp" type="image/webp" width="400" height="400" />
                   <!-- フォールバック -->
                   <img
-                    src="img/menu2.jpg"
-                    alt="チキンケバブライス"
+                    src="/assets/img/menu2.jpg"
+                    alt=""
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
                 </picture>
               </div>
-              <h3 class="menu-item__name">チキンケバブライス</h3>
+              <h3 class="menu-item__name">チキンラップ</h3>
             </div>
             <div class="menu-item">
               <div class="menu-item__img-wrapper">
                 <picture>
-                  <source srcset="img/shaffPick.avif" type="image/avif" />
-                  <source srcset="img/shaffPick.webp" type="image/webp" />
+                  <source
+                    srcset="/assets/img/shaffPick.avif"
+                    type="image/avif"
+                    width="150"
+                    height="100"
+                  />
+                  <source
+                    srcset="/assets/img/shaffPick.webp"
+                    type="image/webp"
+                    width="150"
+                    height="100"
+                  />
                   <img
-                    src="img/shaffPick.png"
+                    src="/assets/img/shaffPick.png"
                     alt="おすすめ！"
                     class="badge-img"
                     width="150"
@@ -426,39 +479,45 @@
                   <!-- SP AVIF -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/menu3Sp.avif"
+                    srcset="/assets/img/menu3Sp.avif"
                     type="image/avif"
+                    width="300"
+                    height="300"
                   />
                   <!-- SP WebP -->
                   <source
                     media="(max-width: 767px)"
-                    srcset="img/menu3Sp.webp"
+                    srcset="/assets/img/menu3Sp.webp"
                     type="image/webp"
+                    width="300"
+                    height="300"
                   />
                   <!-- PC AVIF -->
-                  <source
-                    srcset="img/menu3.avif"
-                    type="image/avif"
-                  />
+                  <source srcset="/assets/img/menu3.avif" type="image/avif" width="400" height="400" />
                   <!-- PC WebP -->
-                  <source
-                    srcset="img/menu3.webp"
-                    type="image/webp"
-                  />
+                  <source srcset="/assets/img/menu3.webp" type="image/webp" width="400" height="400" />
                   <!-- フォールバック -->
                   <img
-                    src="img/menu3.jpg"
-                    alt="チキンケバブライス"
+                    src="/assets/img/menu3.jpg"
+                    alt=""
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
                 </picture>
               </div>
-              <h3 class="menu-item__name">チキンケバブライス</h3>
+              <h3 class="menu-item__name">チキンラップ</h3>
             </div>
           </div>
           <div class="menu__footer">
-            <a href="#" class="btn btn--secondary">その他メニューを見る</a>
+            <a
+              class="btn btn--secondary externalLink menu__footer__link"
+              href="https://www.instagram.com/asian_hatbazar_/p/DGcftN9zTB4/?img_index=3"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Instagramでメニューを見る</a
+            >
           </div>
         </div>
       </section>
@@ -487,10 +546,10 @@
                 aria-label="1 / 6"
               >
                 <picture>
-                  <source srcset="img/slide1.avif" type="image/avif" />
-                  <source srcset="img/slide1.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide1.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide1.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="img/slide1.jpg"
+                    src="/assets/img/slide1.jpg"
                     alt="店内画像1: 商品棚の様子"
                     width="950"
                     height="500"
@@ -506,10 +565,10 @@
                 aria-label="2 / 6"
               >
                 <picture>
-                  <source srcset="img/slide2.avif" type="image/avif" />
-                  <source srcset="img/slide2.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide2.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide2.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="img/slide2.jpg"
+                    src="/assets/img/slide2.jpg"
                     alt="店内画像2: スパイスコーナー"
                     width="950"
                     height="500"
@@ -525,10 +584,10 @@
                 aria-label="3 / 6"
               >
                 <picture>
-                  <source srcset="img/slide3.avif" type="image/avif" />
-                  <source srcset="img/slide3.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide3.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide3.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="img/slide3.jpg"
+                    src="/assets/img/slide3.jpg"
                     alt="店内画像3"
                     width="950"
                     height="500"
@@ -544,10 +603,10 @@
                 aria-label="4 / 6"
               >
                 <picture>
-                  <source srcset="img/slide4.avif" type="image/avif" />
-                  <source srcset="img/slide4.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide4.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide4.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="img/slide4.jpg"
+                    src="/assets/img/slide4.jpg"
                     alt="店内画像4"
                     width="950"
                     height="500"
@@ -563,10 +622,10 @@
                 aria-label="5 / 6"
               >
                 <picture>
-                  <source srcset="img/slide5.avif" type="image/avif" />
-                  <source srcset="img/slide5.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide5.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide5.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="img/slide5.jpg"
+                    src="/assets/img/slide5.jpg"
                     alt="店内画像5"
                     width="950"
                     height="500"
@@ -582,10 +641,10 @@
                 aria-label="6 / 6"
               >
                 <picture>
-                  <source srcset="img/slide6.avif" type="image/avif" />
-                  <source srcset="img/slide6.webp" type="image/webp" />
+                  <source srcset="/assets/img/slide6.avif" type="image/avif" width="950" height="500" />
+                  <source srcset="/assets/img/slide6.webp" type="image/webp" width="950" height="500" />
                   <img
-                    src="img/slide6.jpg"
+                    src="/assets/img/slide6.jpg"
                     alt="店内画像6"
                     width="950"
                     height="500"
@@ -595,7 +654,7 @@
                 </picture>
               </li>
             </ul>
-            
+
             <div class="slider-nav">
               <div class="slider-controls">
                 <!-- コントロールボタン -->
@@ -634,7 +693,7 @@
             </h2>
             <address class="access__address">
               <p>
-                〒133-0056 Tokyo, Edogawa City, Minamikoiwa, 8 Chome−12−6<br />
+                〒133-0056 Tokyo, Edogawa City, Minamikoiwa, 8 Chome-12-6<br />
                 中村マンション No.2 102
               </p>
               <br />
@@ -674,31 +733,47 @@
           <div class="footer__col">
             <h3 class="footer__heading">Follow Us</h3>
             <ul class="social-list">
-              <li><a href="#" aria-label="Instagram">Instagram</a></li>
-              <li><a href="#" aria-label="Facebook">Facebook</a></li>
+              <li>
+                <a
+                  class="externalLink"
+                  href="https://www.instagram.com/asian_hatbazar_/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Instagram</a
+                >
+              </li>
             </ul>
           </div>
           <div class="footer__col">
-            <h3 class="footer__heading">Information</h3>
+            <h3 class="footer__heading">Order Online</h3>
             <ul class="footer-nav">
-              <li><a href="#about">About</a></li>
-              <li><a href="#menu">Menu</a></li>
-              <li><a href="#access">Access</a></li>
+              <li>
+                <a
+                  class="externalLink"
+                  href="https://www.ubereats.com/store/%E3%82%A2%E3%82%B7%E3%82%A2%E3%83%B3-%E3%83%8F%E3%83%83%E3%83%88%E3%83%8F%E3%82%B5%E3%83%BC%E3%83%AB-%26-%E3%83%95%E3%83%BC%E3%83%88/PdrBpRG1T5Ge9BL66TMKfA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >UberEats</a
+                >
+              </li>
+              <li>Rocket Now</li>
             </ul>
           </div>
           <div class="footer__col">
             <h3 class="footer__heading">Contact</h3>
-            <p>Phone: 03-0000-0000</p>
-            <p>contact@example.com</p>
+            <p><a href="tel:07023591981">070-2359-1981</a></p>
+            <p>
+              <a href="mailto:asianhatbazaar@gmail.com"
+                >asianhatbazaar@gmail.com</a
+              >
+            </p>
           </div>
         </div>
         <div class="footer__copyright">
-          <small
-            >&copy; 2024 Asian Hatbazaar & Food. All Rights Reserved.</small
-          >
+          <small>&copy;Asian Hatbazaar &amp; Food</small>
         </div>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script type="module" src="/assets/js/main.js"></script>
   </body>
 </html>
