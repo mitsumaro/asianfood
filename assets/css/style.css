@@ -36,6 +36,7 @@ body {
   color: var(--color-text-main);
   line-height: 1.6;
   background-color: var(--color-white);
+  padding-top: 70px;
 }
 
 /* ハンバーガーメニュー展開中は背景のスクロールを止める */
@@ -151,6 +152,7 @@ ul {
 
 /* Header */
 .header {
+  position: fixed;
   width: 100%;
   top: 0;
   left: 0;
@@ -294,10 +296,6 @@ ul {
 }
 
 /* Values Section */
-.values {
-  background-color: #f9f9f9;
-  /* 背景色微調整 */
-}
 
 /* Values Header Styling Adjustment for "OUR こだわり VALUES" */
 .values .section-title {
@@ -832,7 +830,6 @@ ul {
 
   .section-title {
     font-size: 2rem;
-    text-align: center;
   }
 
   .about__container,
@@ -846,6 +843,12 @@ ul {
   .value-item--reverse {
     flex-direction: column;
     /* モバイルでは順序統一または維持 */
+  }
+
+  .access__map {
+    height: auto;
+    aspect-ratio: 4 / 3;
+    min-height: 350px;
   }
 
   .menu__grid,
