@@ -1,9 +1,9 @@
 /* CSS Reset & Variables */
 :root {
-  --color-primary: #D32F2F;
+  --color-nav-bg: #D32F2F;
   /* 赤系 */
-  --color-nav-bg: #c62828;
-  --color-text-main: #333333;
+  --color-nav-bg: #C02425;
+  --color-text-main: #0B233F;
   --color-white: #ffffff;
   --color-deep-blue: #003366;
 
@@ -368,7 +368,6 @@ ul {
 
 .value-item__content {
   flex: 1;
-  max-width: 670px;
 }
 
 .value-item__title {
@@ -387,7 +386,7 @@ ul {
 
 /* Menu Section */
 .menu {
-  background-color: var(--color-primary);
+  background-color: var(--color-nav-bg);
   /* 背景赤 */
   color: var(--color-white);
   padding-bottom: var(--spacing-xl);
@@ -452,6 +451,10 @@ ul {
   display: flex;
   align-items: center;
   gap: var(--spacing-xl);
+}
+
+.hatbazaar__container .section-title {
+  margin-bottom: 0;
 }
 
 .hatbazaar__content {
@@ -593,7 +596,7 @@ ul {
 
 /* Access / Footer Area */
 .access {
-  background-color: #2c6ca8;
+  background-color: #2B6BB7;
   /* 青色背景 */
   color: var(--color-white);
   padding: var(--spacing-xl) 0;
@@ -616,7 +619,7 @@ ul {
   text-align: left;
   font-size: 3rem;
   line-height: 1.2;
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
 }
 
 .access__address {
@@ -776,7 +779,7 @@ ul {
     left: 0;
     width: 100%;
     height: calc(100vh - 70px);
-    background: linear-gradient(160deg, rgba(198, 40, 40, 1) 48%, #001f3f 48%); /* 斜め分割 */
+    background: linear-gradient(160deg, var(--color-nav-bg) 48%, #001f3f 48%); /* 斜め分割 */
     padding-top: 40px;
     text-align: center;
     transform: translateX(100%);
@@ -838,6 +841,23 @@ ul {
   .hatbazaar__container,
   .access__container {
     flex-direction: column;
+  }
+
+  /* 縦積みになるとalign-items:centerの向きが横に変わり、
+     文章の長さ次第でテキストが幅いっぱいに広がらず中央に縮んでしまうため、
+     スマホ幅では明示的に幅いっぱいへ広げる */
+  .value-item,
+  .value-item--reverse {
+    align-items: stretch;
+  }
+
+  /* テキストは幅いっぱいに広げる一方、画像は中央寄せのまま維持する */
+  .value-item__image {
+    align-self: center;
+  }
+
+  .about__content {
+    max-width: none;
   }
 
   .value-item--reverse {
